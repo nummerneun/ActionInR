@@ -13,7 +13,7 @@ c <- c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE)
 a <- c(1, 2, 5, 3, 6, -2, 4)
 a[3]
 a[c(1, 3, 5)]
-a[2:6]                     
+a[2:6]
 
 
 a <- c("k", "j", "h", "a", "c", "m")
@@ -27,9 +27,9 @@ y <- matrix(1:20, nrow=5, ncol=4)
 y
 cells    <- c(1,26,24,68)
 rnames   <- c("R1", "R2")
-cnames   <- c("C1", "C2") 
+cnames   <- c("C1", "C2")
 mymatrix <- matrix(cells, nrow=2, ncol=2, byrow=TRUE,
-                   dimnames=list(rnames, cnames)) 
+                   dimnames=list(rnames, cnames))
 mymatrix
 mymatrix <- matrix(cells, nrow=2, ncol=2, byrow=FALSE,
                    dimnames=list(rnames, cnames))
@@ -65,7 +65,7 @@ patientdata
 # Listing 2.5 - Specifying elements of a dataframe
 patientdata[1:2]
 patientdata[c("diabetes","status")]
-patientdata$age                       
+patientdata$age
 
 
 # Listing 2.6 - Using factors
@@ -76,7 +76,7 @@ status <- c("Poor", "Improved", "Excellent", "Poor")
 diabetes <- factor(diabetes)
 status <- factor(status, order=TRUE)
 patientdata <- data.frame(patientID, age, diabetes, status)
-str(patientdata)                               
+str(patientdata)
 summary(patientdata)
 
 
@@ -106,8 +106,9 @@ mydata <- read.table(header=TRUE, text=mydatatxt)
 
 
 # Importing data from a delimited text file
-
-# First, save the following 4 lines in a file named 
+getwd()
+setwd("./ActionInR")
+# First, save the following 4 lines in a file named
 # "studentgrades.csv" in the current working directory
 StudentID,First,Last,Math,Science,Social Studies
 011,Bob,Smith,90,80,67
@@ -121,7 +122,7 @@ grades <- read.table("studentgrades.csv", header=TRUE,
 grades # print data frame
 str(grades) # view data frame structure
 
-# Alternatively, import the data while specifying column classes 
+# Alternatively, import the data while specifying column classes
 grades <- read.table("studentgrades.csv", header=TRUE,
                      row.names="StudentID", sep=",",
                      colClasses=c("character", "character", "character",
